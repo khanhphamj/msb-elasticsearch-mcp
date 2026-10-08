@@ -1,0 +1,5 @@
+# TLS front door for the MCP server (started by `make edge`). Caddy obtains and renews the certificate itself.
+# Ports 80 (ACME HTTP challenge) and 443 must be reachable from the Internet.
+{$EDGE_HOST} {
+	reverse_proxy sre-es-mcp:8080
+}
